@@ -1,28 +1,40 @@
-#include<stdio.h>
-#include<time.h>
+#include <stdio.h>
+#include <time.h>
 
-void get_data(void) {
+void getData(void) {
     FILE *fp;
-    if ((fp = fopen("dt_dat", "r")) == NULL) printf("初回実行です\n");
+    if ((fp = fopen("task-data-10-1.txt", "r")) == NULL)
+        printf("Initial run!\n");
     else {
         int month, day, h, m, s;
-        fscanf(fp, "%d %d %d %d %d", &month, &day, &h, &m, &s);
-        printf("前回:%d-%d-%d:%d:%d\n", month, day, h, m, s);
+        char felleng[1024];
+        fscanf(fp, "%d %d %d %d %d %s", &month, &day, &h, &m, &s, &felleng);
+        printf("%d/%d %d:%d:%d, I feel %s!\n", month, day, h, m, s, felleng);
         fclose(fp);
     }
 }
-void put_data() {
+
+void putData(void) {
     FILE *fp;
     time_t current = time(NULL);
     struct tm *timer = localtime(&current);
-    if((fp = fopen("dt_dat", "w")) == NULL) printf("ファイルオープンできません\n");
+    char feeling[1024];
+    if ((fp = fopen("task-data-10-1.txt", "w")) == NULL)
+        printf("Cannot open that file!\n");
     else {
-        printf("現在の日時, 時刻を書き出しました\n");
-        fprintf(fp, "%d %d %d %d %d", timer->tm_mon+1, timer->tm_mday, timer->tm_hour, timer->tm_min, timer->tm_sec);
+        printf("Current date and time were written down!\n\n");
+        printf("How are you feeling?\n");
+        scanf("%s", &feeling);
+        fprintf(fp, "%d %d %d %d %d %s", timer->tm_mon + 1, timer->tm_mday,
+                timer->tm_hour, timer->tm_min, timer->tm_sec, feeling);
         fclose(fp);
     }
 }
+
 int main(void) {
-    get_data(); put_data(); get_data();
+    getData();
+    putData();
+    getData();
+
     return 0;
 }
