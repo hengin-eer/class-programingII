@@ -1,0 +1,28 @@
+Script started on 2022-07-11 22:12:37+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-12-1.c
+#include<stdio.h>
+
+int main(void) {
+    int i, ch;
+    int cnt = 0;
+    while((ch = getchar()) != EOF) {
+        if(ch == '\n')    cnt++;
+    }
+    printf("\'\\n\':%d\n", cnt);
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ a[Kta[K[Kgcc task-12-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+
+
+
+
+
+
+
+
+'\n':8
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-07-11 22:13:18+09:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,32 @@
+Script started on 2022-11-21 09:33:36+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="124" LINES="15"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-5-2.c
+#include<stdio.h>
+#include<stdlib.h>
+#define N (10)
+
+int main(void) {
+    int *x = calloc(N, sizeof(int));
+    for (int i=0; i<N; i++) {
+        x[i] = i*2;
+        printf("x[%d]: %d\n", i, x[i]);
+    }
+
+    free(x);
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-5-2.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+x[0]: 0
+x[1]: 2
+x[2]: 4
+x[3]: 6
+x[4]: 8
+x[5]: 10
+x[6]: 12
+x[7]: 14
+x[8]: 16
+x[9]: 18
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-11-21 09:33:59+09:00 [COMMAND_EXIT_CODE="0"]

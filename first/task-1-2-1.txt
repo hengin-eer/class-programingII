@@ -1,0 +1,27 @@
+Script started on 2022-04-12 21:27:08+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task1-2-1.c
+#include<stdio.h>
+int main(void) {
+    int i, a[5] = {1, 6, 2, 4, 8}, b[5];
+
+    for (i=0; i<5; i++) {
+        printf("%d", a[i]);
+    }
+    printf("\n\n");
+    
+    for (i=0; i<5; i++) {
+        b[i] = a[4-i];
+        printf("%d", b[i]);
+    }
+    printf("\n");
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task1-2-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+16248
+
+84261
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-04-12 21:27:33+09:00 [COMMAND_EXIT_CODE="0"]

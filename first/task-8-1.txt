@@ -1,0 +1,48 @@
+Script started on 2022-06-06 23:53:41+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-8-1.c
+#include<stdio.h>
+#include<limits.h>
+
+int INT(void) {
+    int i, num, fact=1;
+    printf("INT_MAX %d\n", INT_MAX);
+    printf("整数を入力して下さい : ");
+    scanf("%d", &num);
+    for (i=1; i<=num; i++) {
+        if (INT_MAX/fact <= i) {
+            printf("INT_MAX(%d) / fact(%d) %d <= i %d\n", INT_MAX, fact, INT_MAX/fact, i);
+        }
+        fact *= i;
+    }
+    printf("%dの階乗は%dです\n", num, fact);
+    
+    return 0;
+}
+int main(void) {
+    INT();
+
+    long i, num, fact = 1;
+    printf("LONG_MAX %ld\n",LONG_MAX);
+    printf("整数を入力して下さい：");
+    scanf("%ld", &num);
+    for (i = 1; i <= num; i++){
+        if(LONG_MAX/fact<=i){
+            printf("LONG_MAX(%ld) / fact(%ld) %ld <= i %ld\n",LONG_MAX,fact,LONG_MAX/fact,i);
+        }
+        fact *= i;
+    }
+    printf("%ldの階乗は%ldです\n", num, fact);
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-8-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+INT_MAX 2147483647
+整数を入力して下さい : 10
+10の階乗は3628800です
+LONG_MAX 9223372036854775807
+整数を入力して下さい：10
+10の階乗は3628800です
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-06-06 23:54:00+09:00 [COMMAND_EXIT_CODE="0"]

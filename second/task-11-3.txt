@@ -1,0 +1,55 @@
+Script started on 2023-01-23 10:25:39+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="90" LINES="19"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-11-3.c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+void test_atoi(void) {
+    puts("\nTest of atoi:\n");
+    printf("%d\n", atoi("3.14159265359"));
+    printf("%d\n", atoi("2.71828182846"));
+    printf("%d\n", atoi("1+132"));
+    printf("%d\n", atoi("   -369"));
+    printf("%d\n", atoi("3*2*1"));
+}
+
+void test_strcmp(void) {
+    puts("\nTest of strcmp:\n");
+    char s1[] = "Akashi";
+    char s2[] = "Kosen";
+    char s3[] = "Akashi";
+    printf("%d\n", strcmp(s1, s1));
+    printf("%d\n", strcmp(s1, s2));
+    printf("%d\n", strcmp(s2, s1));
+    strcat(s1, s2);
+    printf("s3: %s\n", s3);
+    printf("%d\n", strcmp(s1, s3));
+}
+
+int main(void) {
+    test_atoi();
+    test_strcmp();
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-11-3.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+
+Test of atoi:
+
+3
+2
+1
+-369
+3
+
+Test of strcmp:
+
+0
+-10
+10
+s3: osen
+-46
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2023-01-23 10:25:56+09:00 [COMMAND_EXIT_CODE="0"]

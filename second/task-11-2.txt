@@ -1,0 +1,35 @@
+Script started on 2023-01-23 09:40:21+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="90" LINES="15"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-11-2.c
+#include<stdio.h>
+
+void str_tolower(char s[]) {
+    int i = 0;
+    puts("Changing...\n");
+    while(s[i]) {
+        if ('A' <= s[i] && s[i] <= 'Z') s[i] = s[i] + 32;
+        else s[i] = s[i];
+        i++;
+    }
+}
+
+int main(void) {
+    char str[128];
+    printf("Enter a string!\n");
+    scanf("%s", str);
+    printf("before: %s\n", str);
+    str_tolower(str);
+    printf("after:  %s\n", str);
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-11-2.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+Enter a string!
+AkashiKosen
+before: AkashiKosen
+Changing...
+
+after:  akashikosen
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2023-01-23 09:40:43+09:00 [COMMAND_EXIT_CODE="0"]

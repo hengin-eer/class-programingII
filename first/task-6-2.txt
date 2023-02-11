@@ -1,0 +1,28 @@
+Script started on 2022-06-04 13:59:11+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-6-2.c
+#include<stdio.h>
+
+int main(void) {
+    long int i, sum, dig;
+    char str[] = "E2126";
+    for (i=4,sum=0,dig=1; i>=0; i--) {
+        if ('9' >= str[i] && str[i] >= '0') {
+            sum += (str[i] - '0') * dig;
+        }
+        if ('F' >= str[i] && str[i] >= 'A') {
+            sum += (str[i] - 'A' + 10) * dig;
+        }
+        if ('f' >= str[i] && str[i] >= 'a') {
+            sum += (str[i] - 'a' + 10) * dig;
+        }
+        dig *= 16;
+    }
+    printf("0xE2126 : %ld\n", sum);
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-6-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+0xE2126 : 925990
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-06-04 13:59:44+09:00 [COMMAND_EXIT_CODE="0"]

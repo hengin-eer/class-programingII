@@ -1,0 +1,56 @@
+Script started on 2022-07-04 14:29:51+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat sample_bable.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void bubble(int a[], int n)
+{
+	int i, j; int t;
+	for (i = 0; i < n - 1; i++) {
+		for (j = n - 1; j > i; j--)
+			if (a[j - 1] > a[j]) {
+				t = a[j - 1]; a[j - 1] = a[j]; a[j] = t;
+			}				
+	}
+}
+
+int main(void)
+{
+	int i, nx;int *x;double time;
+	nx = 200;
+
+	printf("バブルソート\n要素数 経過時間 ソート結果\n");
+
+	while (1) {
+		printf("%8d ", nx);
+		clock_t start = clock();
+		x = (int *)calloc(nx, sizeof(int));
+
+		for (i = 0; i < nx; i++) { x[i] = rand(); }
+		bubble(x, nx);
+		clock_t end = clock();
+		time = (double)(end - start) / CLOCKS_PER_SEC;
+		printf("%6.3f  ", time);
+
+		for (i = 0; i < 10; i++)printf("%d ", x[i]);
+		printf("\n");free(x);
+
+		if (time > 0.1)break;nx = nx * 2;
+	}
+	return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc sample_bable.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+バブルソート
+要素数 経過時間 ソート結果
+     200  0.000  8936987 35005211 42999170 76065818 84353895 111537764 112805732 116087764 135497281 137806862 
+     400  0.001  2416949 6939507 7684930 11614769 12260289 12895151 31308902 37487770 70636429 70788355 
+     800  0.004  100669 4744263 6072641 10150109 10901063 11671338 12548159 13798878 14933990 14989683 
+    1600  0.006  871000 1648609 4537736 5631942 6938620 7426169 8293554 10604139 12692331 13146790 
+    3200  0.017  881759 1323524 1769972 1887329 2054525 2699846 2701149 2846977 4775113 4880533 
+    6400  0.080  172621 479345 1121937 1839949 1906952 2044757 2236196 2237012 3000745 3137020 
+   12800  0.367  92804 272267 436756 460933 598272 698609 810024 812720 835106 976213 
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-07-04 14:30:13+09:00 [COMMAND_EXIT_CODE="0"]

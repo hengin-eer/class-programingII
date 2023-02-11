@@ -1,0 +1,26 @@
+Script started on 2022-11-14 09:05:26+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-4-2.c
+#include<stdio.h>
+#include<string.h>
+
+int main(void) {
+    char str1[128] = {"a"};
+    char str2[128] = {"b"};
+
+    strcat(str1,str2);
+
+    printf("%s\n",str1);
+
+    int len = strlen(str1);
+
+    printf("%d\n",len);
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-4-2.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+ab
+2
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-11-14 09:05:43+09:00 [COMMAND_EXIT_CODE="0"]

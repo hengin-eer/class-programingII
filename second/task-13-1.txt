@@ -1,0 +1,50 @@
+Script started on 2023-01-30 10:16:57+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="106" LINES="12"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-13-1.c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define NUMBER 3
+#define NAME_LEN 64
+
+struct student {
+    char name[64];
+    int height;
+    float weight;
+};
+
+int compare_struct(struct student *a, struct student *b) {
+    return a->height - b->height;
+}
+
+int main(void) {
+    int i;
+    struct student std[] = {
+        {"Sato", 178, 61.2}, {"Sanaka", 175, 62.5}, {"Takao", 173, 86.2}
+    };
+    qsort(std, 3, sizeof(struct student), compare_struct);
+    puts("After Sorted...");
+    for (i=0; i<NUMBER; i++) {
+        printf("%d:%-8s%3d\n",i+1,std[i].name,std[i].height);
+    }
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc a[K\[Ktask-13-1.c
+[01m[Ktask-13-1.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ktask-13-1.c:22:43:[m[K [01;35m[Kwarning: [m[Kpassing argument 4 of ‘[01m[Kqsort[m[K’ from incompatible pointer type [[01;35m[K-Wincompatible-pointer-types[m[K]
+   22 |     qsort(std, 3, sizeof(struct student), [01;35m[Kcompare_struct[m[K);
+      |                                           [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                                           [01;35m[K|[m[K
+      |                                           [01;35m[Kint (*)(struct student *, struct student *)[m[K
+In file included from [01m[Ktask-13-1.c:3[m[K:
+[01m[K/usr/include/stdlib.h:831:20:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K__compar_fn_t[m[K’ {aka ‘[01m[Kint (*)(const void *, const void *)[m[K’} but argument is of type ‘[01m[Kint (*)(struct student *, struct student *)[m[K’
+  831 |      [01;36m[K__compar_fn_t __compar[m[K) __nonnull ((1, 4));
+      |      [01;36m[K~~~~~~~~~~~~~~^~~~~~~~[m[K
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+After Sorted...
+1:Takao   173
+2:Sanaka  175
+3:Sato    178
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2023-01-30 10:17:16+09:00 [COMMAND_EXIT_CODE="0"]

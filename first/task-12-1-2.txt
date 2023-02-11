@@ -1,0 +1,44 @@
+Script started on 2022-07-11 14:18:40+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-12-2.c
+#include<stdio.h>
+
+int main(void) {
+    int i, ii, ch;
+    int cnt[10] = {0};
+    printf("Input the numbers!\n");
+    while((ch = getchar()) != EOF) {
+        if(ch >='0' && ch <='9')    cnt[ch-'0']++;
+    }
+    puts("Number of appearances of numbers\n");
+    puts("'*' Indicates the number of occurrences\n");
+    for(i=0; i<10; i++) {
+        printf("'%d':", i);
+        for(ii=0; ii<cnt[i]; ii++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-12-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Input the numbers!
+3.1415926535897
+Number of appearances of numbers
+
+'*' Indicates the number of occurrences
+
+'0':
+'1':**
+'2':*
+'3':**
+'4':*
+'5':***
+'6':*
+'7':*
+'8':*
+'9':**
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-07-11 14:19:23+09:00 [COMMAND_EXIT_CODE="0"]

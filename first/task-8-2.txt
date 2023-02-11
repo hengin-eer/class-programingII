@@ -1,0 +1,17 @@
+Script started on 2022-06-06 23:59:42+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-8-2.c
+#include<stdio.h>
+#define diff(x, y) ((x)-(y))
+
+int main(void) {
+    int i=3, ii=2;
+    printf("i - ii = %d\n", diff(i, ii));
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-8-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+i - ii = 1
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-06-06 23:59:54+09:00 [COMMAND_EXIT_CODE="0"]

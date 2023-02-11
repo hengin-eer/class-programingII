@@ -1,0 +1,26 @@
+Script started on 2022-05-03 14:35:18+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-4-2[K3.c
+#include<stdio.h>
+int j;
+void func1(void) {
+    int i = 1;
+    printf("%d is 'i' in func1.\n", i);
+}
+
+int main(void) {
+    int i = 0;
+    func1();
+    printf("%d is 'i' in main.\n", i);
+    j = 2;
+    printf("%d is 'j' which is global variables.\n", j);
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-4-3.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+1 is 'i' in func1.
+0 is 'i' in main.
+2 is 'j' which is global variables.
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-05-03 14:35:35+09:00 [COMMAND_EXIT_CODE="0"]

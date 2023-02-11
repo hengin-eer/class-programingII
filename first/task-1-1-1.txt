@@ -1,0 +1,22 @@
+Script started on 2022-04-12 21:39:00+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-1-1-1.c
+#include<stdio.h>
+int main(void) {
+    int firstNum, secondNum, prod;
+    printf("Input the first number! >>");
+    scanf("%d", &firstNum);//21
+    printf("Input the second number! >>");
+    scanf("%d", &secondNum);//26
+    prod = firstNum * secondNum;//546
+    printf("The product is %d!\n", prod);
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-1-1-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Input the first number! >>21
+Input the second number! >>26
+The product is 546!
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-04-12 21:39:27+09:00 [COMMAND_EXIT_CODE="0"]

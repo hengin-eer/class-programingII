@@ -1,0 +1,32 @@
+Script started on 2022-05-16 13:57:57+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task^[K-60[K-1.c
+#include<stdio.h>
+
+int euclid(int x, int y) {
+    printf("\n x:%d y:%d", x, y);
+        if (y == 0) return x;
+        else    return euclid(y, x % y);
+}
+
+int main(void) {
+    printf("Find the greatest common divisor from Euclidean\n");
+    int x=1024, y=532;
+    printf("\n\nThe greatest common divisor between %d and %d is %d!\n", x, y, euclid(x, y));
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-6-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Find the greatest common divisor from Euclidean
+
+ x:1024 y:532
+ x:532 y:492
+ x:492 y:40
+ x:40 y:12
+ x:12 y:4
+ x:4 y:0
+
+The greatest common divisor between 1024 and 532 is 4!
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit[[K
+exit
+
+Script done on 2022-05-16 13:58:20+09:00 [COMMAND_EXIT_CODE="0"]

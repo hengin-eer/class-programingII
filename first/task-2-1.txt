@@ -1,0 +1,22 @@
+Script started on 2022-04-24 14:33:24+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-2-1.c
+#include<stdio.h>
+int Conpa(int a, int b) {
+    int c;
+    if (a>b) c = b;
+    else if (a<b) c = a;
+    else if (a==b) c = a;
+
+    return c;
+}
+int main(void) {
+    printf("Conparison %d\n", Conpa(7, 7));
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-2-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Conparison 7
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-04-24 14:34:13+09:00 [COMMAND_EXIT_CODE="0"]

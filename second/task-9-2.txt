@@ -1,0 +1,29 @@
+Script started on 2022-12-05 10:07:46+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="107" LINES="15"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-0[K9-2.c
+#include<stdio.h>
+
+int main(void) {
+    FILE *fp;
+    char *fname;
+
+    printf("確認したいファイル名を入力して下さい\n");
+    scanf("%s", fname);
+    printf("%s\n", fname);
+
+    fp = fopen(fname, "r");
+    if (fp == NULL) printf("そのファイルは存在しません\n");
+    else {
+        printf("そのファイルは存在します\n");
+    }
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-9-2.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+確認したいファイル名を入力して下さい
+task-9-2.c
+task-9-2.c
+そのファイルは存在します
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-12-05 10:08:36+09:00 [COMMAND_EXIT_CODE="0"]
