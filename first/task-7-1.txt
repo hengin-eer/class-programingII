@@ -1,0 +1,28 @@
+Script started on 2022-05-30 14:26:04+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-7-1.c
+#include <stdio.h>
+int main(void){
+    int i,ii,dansu;
+    dansu=4;
+    for(i=1;i<dansu;i++){
+        for(ii=0; ii<3-i; ii++){
+            printf("a");
+        }
+        for(ii=0;ii<(i-1)*2+1;ii++){
+            printf("*");
+        }
+        for(ii=0; ii<3-i; ii++){
+            printf("b");
+        }
+        printf("\n");
+    }
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-7-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+aa*bb
+a***b
+*****
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-05-30 14:26:22+09:00 [COMMAND_EXIT_CODE="0"]

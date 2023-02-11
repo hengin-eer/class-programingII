@@ -1,0 +1,27 @@
+Script started on 2022-05-30 16:58:26+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-72[K-2.c
+#include<stdio.h>
+
+unsigned rrotate(unsigned x, int n) {
+    return x>>n;
+}
+
+unsigned lrotate(unsigned x, int n) {
+    return x<<n;
+}
+
+int main(void) {
+    int x = 4;
+    int n = 2;
+    printf("%d >> %d : %d\n",x, n, rrotate(x, n));
+    printf("%d << %d : %d\n",x, n, lrotate(x, n));
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-7-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+4 >> 2 : 1
+4 << 2 : 16
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-05-30 16:58:51+09:00 [COMMAND_EXIT_CODE="0"]

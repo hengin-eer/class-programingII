@@ -1,0 +1,43 @@
+Script started on 2022-07-11 23:43:16+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-12-2.c
+#include<stdio.h>
+#define cap 10
+
+int main(void) {
+    int i, cnt=0;
+    char s[cap][128];
+    for(i=0; i<cap; i++) {
+        printf("s[%d]:", i);
+        scanf("%s", s[i]);
+        cnt++;
+
+        if(s[i][0] == '$' && s[i][1] == '$' && s[i][2] == '$' && s[i][3] == '$' && s[i][4] == '$') {
+            i = cap;
+        }
+    }
+    for(i=0; i<cnt-1; i++) {
+        printf("s[%d] = \"%s\"\n", i, s[i]);
+    }
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-12-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+s[0]:a
+s[1]:b
+s[2]:c
+s[3]:d
+s[4]:e
+s[5]:f
+s[6]:g
+s[7]:$$$$$
+s[0] = "a"
+s[1] = "b"
+s[2] = "c"
+s[3] = "d"
+s[4] = "e"
+s[5] = "f"
+s[6] = "g"
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-07-11 23:43:51+09:00 [COMMAND_EXIT_CODE="0"]

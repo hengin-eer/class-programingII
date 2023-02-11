@@ -1,0 +1,49 @@
+Script started on 2022-11-21 09:50:04+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="124" LINES="15"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit./a.outgcc task-5-1.ccat[C[C[C[C[C[C[C[C[C[C[C
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void rev_strings(char *s[128], int n) {
+    int len =0, i, j;
+    char tmp, *t, *s2;
+    for (i=0; i<n; i++) {
+        printf("*s[%d]: %s\n", i, *(s + i));
+        s2 = calloc(sizeof(char), 128);
+        t = *(s + i);
+        strcpy(s2, t);
+        len = strlen(t);
+        for (j=0; j<len/2; j++) {
+            tmp = *(s2+j);
+            *(s2+j) = *(s2+len-j-1);
+            *(s2+len-j-1) = tmp;
+        }
+        *(s + i) = s2;
+        printf("reversed s[%d]: %s\n", i, *(s + i));
+    }
+    for (i=0; i<n; i++) {
+        printf("*s[%d]: %s\n", i, *(s + i));
+    }
+}
+
+int main(void) {
+    char *str[128] = {"Akashi", "Kosen", "Nagao"};
+    int num = 3;
+    rev_strings(str, num);
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-5-1.cexit[K./a.outgcc task-5-1.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-5-1.ccat[C[C[C[C[C[C[C[C[C[C[Cexit[K./a.out
+*s[0]: Akashi
+reversed s[0]: ihsakA
+*s[1]: Kosen
+reversed s[1]: nesoK
+*s[2]: Nagao
+reversed s[2]: oagaN
+*s[0]: ihsakA
+*s[1]: nesoK
+*s[2]: oagaN
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-11-21 09:50:19+09:00 [COMMAND_EXIT_CODE="0"]

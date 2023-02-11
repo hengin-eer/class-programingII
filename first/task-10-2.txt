@@ -1,0 +1,30 @@
+Script started on 2022-06-13 13:35:37+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-10-2.c
+#include<stdio.h>
+
+void put_count(void) {
+    static int n = 0;
+    n += 1;
+    printf("put_count:%d回目\n", n);
+}
+
+int main(void) {
+    int i, n;
+    printf("Enter the number to calling!\n");
+    scanf("%d", &n);
+    for (i=0; i<n; i++) {
+        put_count();
+    }
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-101[K-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Enter the number to calling!
+3
+put_count:1回目
+put_count:2回目
+put_count:3回目
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-06-13 13:35:57+09:00 [COMMAND_EXIT_CODE="0"]

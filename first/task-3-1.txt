@@ -1,0 +1,26 @@
+Script started on 2022-05-02 13:09:11+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-3-1.c
+#include<stdio.h>
+
+int showAge(void) {
+    int age;
+    printf("Input your age.\n");
+    scanf("%d", &age);
+    printf("You're %d years old.\n", age);
+
+    return 0;
+}
+
+int main(void) {
+    showAge();
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-3-1.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Input your age.
+16
+You're 16 years old.
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-05-02 13:09:32+09:00 [COMMAND_EXIT_CODE="0"]

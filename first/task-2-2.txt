@@ -1,0 +1,23 @@
+Script started on 2022-04-24 14:34:22+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ cat task-2-2.c
+#include<stdio.h>
+int Compa(int a, int b, int c) {
+    int s;
+
+    if (b>=a&&c>=a) s = a;
+    else if (a>=b&&c>=b) s = b;
+    else if (a>=c&&b>=c) s = c;
+
+    return s;
+}
+int main(void) {
+    printf("Comparison %d\n", Compa(2, 8, 4));
+
+    return 0;
+}]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ gcc task-2-2.c
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ ./a.out
+Comparison 2
+]0;e2126@SSD: ~/progII[01;32me2126@SSD[00m:[01;34m~/progII[00m$ exit
+exit
+
+Script done on 2022-04-24 14:34:45+09:00 [COMMAND_EXIT_CODE="0"]

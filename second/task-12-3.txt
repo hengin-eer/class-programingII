@@ -1,0 +1,35 @@
+Script started on 2023-01-30 09:34:37+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="106" LINES="13"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-12-3.c
+#include<stdio.h>
+#include<stdlib.h>
+
+int compare_int(const int *a, const int *b) {
+    return *b - *a;
+}
+
+int main(void) {
+    int data[] = {4, 3, 6, 2, 1};
+    int i;
+    qsort(data, 5, sizeof(int), compare_int);
+    for (i=0; i<5; i++) {
+        printf("%3d", data[i]);
+    }
+    printf("\n");
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-12-3.c
+[01m[Ktask-12-3.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ktask-12-3.c:11:33:[m[K [01;35m[Kwarning: [m[Kpassing argument 4 of ‘[01m[Kqsort[m[K’ from incompatible pointer type [[01;35m[K-Wincompatible-pointer-types[m[K]
+   11 |     qsort(data, 5, sizeof(int), [01;35m[Kcompare_int[m[K);
+      |                                 [01;35m[K^~~~~~~~~~~[m[K
+      |                                 [01;35m[K|[m[K
+      |                                 [01;35m[Kint (*)(const int *, const int *)[m[K
+In file included from [01m[Ktask-12-3.c:2[m[K:
+[01m[K/usr/include/stdlib.h:831:20:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K__compar_fn_t[m[K’ {aka ‘[01m[Kint (*)(const void *, const void *)[m[K’} but argument is of type ‘[01m[Kint (*)(const int *, const int *)[m[K’
+  831 |      [01;36m[K__compar_fn_t __compar[m[K) __nonnull ((1, 4));
+      |      [01;36m[K~~~~~~~~~~~~~~^~~~~~~~[m[K
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+  6  4  3  2  1
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2023-01-30 09:34:52+09:00 [COMMAND_EXIT_CODE="0"]

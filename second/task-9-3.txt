@@ -1,0 +1,34 @@
+Script started on 2022-12-05 10:25:17+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="107" LINES="15"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-8[K9-3.c
+#include<stdio.h>
+
+int main(void) {
+    FILE *fp;
+    char *fname;
+    char arr[1024];
+
+    printf("初期化したいファイル名を入力して下さい\n");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "r"); fscanf(fp, "%s", arr);
+    fclose(fp);
+    printf("%s's contents: %s\n", fname, arr);
+
+    fp = fopen(fname, "w");
+    if (fp == NULL) printf("そのファイルは存在しません\n");
+    else {
+        printf("ファイルを初期化しました\n");
+    }
+    fclose(fp);
+
+    return 0;
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-0^?^?[K[K[K9-3.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+初期化したいファイル名を入力して下さい
+a. bc.txt
+abc.txt's contents: abcdefghijklmnopqrstuvwxyz
+ファイルを初期化しました
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-12-05 10:25:56+09:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,35 @@
+Script started on 2022-11-08 10:14:00+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="40"]
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ cat task-4-1.c
+#include<stdio.h>
+
+void rev_string(char *s);
+
+int main(void) {
+    char str[] = "abcdefg";
+    printf("str: %s\n", str);
+    rev_string(str);
+
+    return 0;
+}
+
+void rev_string(char *s) {
+    int len = 0;
+    char *t = s;
+    while (*t++) {
+        len++;
+    }
+    char tmp;
+    for (int i=0; i<len/2; i++) {
+        tmp = *(s+i);
+        *(s+i) = *(s+len-i-1);
+        *(s+len-i-1) = tmp;
+    }
+    printf("reversed *s: %s\n", s);
+}]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ gcc task-4-1.c
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ ./a.out
+str: abcdefg
+reversed *s: gfedcba
+]0;e2126@SSD: ~/progII/second[01;32me2126@SSD[00m:[01;34m~/progII/second[00m$ exit
+exit
+
+Script done on 2022-11-08 10:14:59+09:00 [COMMAND_EXIT_CODE="0"]
