@@ -14,7 +14,7 @@ typedef struct intstack {
 
 int Init(IntStack *s, int max) {
     s->ptr = 0;
-    if ((s->stk = calloc(max, sizeof(int))) == NULL) {
+    if ((s->stk = calloc(max, sizeof(Member))) == NULL) {
         s->max = 0;
         return -1;
     }
